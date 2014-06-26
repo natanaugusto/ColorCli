@@ -45,6 +45,10 @@ class ColorCliTest extends PHPUnit {
 		$this->assertEquals("\033[0;35m\033[43mTesting Colors class\033[0m",
 			ColorCli::getString('Testing Colors class', 'purple', 'yellow'),"
 			Can't write string with font color purple and background yellow");
+
+		$this->assertEquals("\033[0;35m\033[43mTesting Colors class\033[0m\n",
+			ColorCli::getString('Testing Colors class', 'purple', 'yellow', true),"
+			Can't write string with font color purple and background yellow with a breakline");
 	}
 
 	public function testGetFontColors() {

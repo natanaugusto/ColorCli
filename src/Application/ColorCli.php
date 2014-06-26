@@ -56,7 +56,7 @@ class ColorCli {
 	* @param string $backgroundColor The name of color to coloring the string background
 	* @return string The string formated to show colorful on CLI
 	*/
-	public static function getString($string, $fontColor = '', $backgroundColor = '') {
+	public static function getString($string, $fontColor = '', $backgroundColor = '', $breakline = false) {
 		$strReturn = "";
 
 		if(isset(self::$fontColors[$fontColor])) {
@@ -67,7 +67,8 @@ class ColorCli {
 			$strReturn .= "\033[" . self::$backgroundColors[$backgroundColor] . "m";	
 		}
 
-		return $strReturn . $string . "\033[0m";
+		$strReturn .= $string . "\033[0m";
+		return $strReturn . ($breakline ? "\n" : "");
 	}
 
 	/**
