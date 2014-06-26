@@ -90,3 +90,4 @@ class ColorCli {
 		return array_keys(self::$backgroundColors);
 	}
 }
+
